@@ -5,7 +5,6 @@
     <div class="recipe-title-container">
         <h2 class="recipe-title">{{ recipe.title }}</h2>
     </div>
-
     <div class="recipe-author">
         <span class="recipe-author-item">
             <i class="fas fa-user"></i>
@@ -22,11 +21,9 @@
             </a>
         </span>
     </div>
-
     <div class="recipe-content">
-    <p>{{ recipe.description }}</p>
+        <p>{{ recipe.description }}</p>
     </div>
-
     <div class="recipe-meta-container">
         <div class="recipe-meta recipe-preparation">
             <h3 class="recipe-meta-title"><i class="fas fa-stopwatch"></i> Preparo</h3>
@@ -42,11 +39,19 @@
         </div>
     </div>
 
+    {% if is_detail_page is not True %}
     <footer class="recipe-footer">
         <a class="recipe-read-more button button-dark button-full-width" href="/recipes/3/">
             <i class="fas fa-eye"></i>
             <span>ver mais...</span>
         </a>
     </footer>
+{% endif %}
+
+{% if is_detail_page is True %}
+    <div class="preparation-steps">
+        {{ recipe.preparation_steps|linebreaksbr }}
+    </div>
+{% endif %}
 
 </div>
