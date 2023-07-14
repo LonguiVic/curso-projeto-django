@@ -1,4 +1,4 @@
-<div class="recipe recipe-list-item">
+<div class="recipe recipe-list-item" style="height: fit-content;">
     <div class="recipe-cover">
         <img src="{{ recipe.cover.url }}" alt="Temporário">
     </div>
@@ -46,12 +46,12 @@
             <span>ver mais...</span>
         </a>
     </footer>
-{% endif %}
+    {% endif %}
 
-{% if is_detail_page is True %}
-    <div class="preparation-steps">
+    {% if is_detail_page is True %}
+    <div class="preparation-steps" style="padding: 2rem;">
         {{ recipe.preparation_steps|linebreaksbr }}
     </div>
-{% endif %}
+    {% endif %}
 
 </div>
